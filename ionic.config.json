@@ -1,0 +1,8 @@
+{
+  "name": "capstone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "7beb099c"
+}
