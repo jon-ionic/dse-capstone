@@ -27,18 +27,8 @@ end
 target 'App' do
   capacitor_pods
   # Add your Pods here
-  pod 'Firebase/Messaging', '10.4.0'
-  pod 'Firebase/Crashlytics', '10.4.0'
-  # Recommended: Add the Firebase pod for Google Analytics
-  pod 'Firebase/Analytics', '10.4.0'
 end
 
 post_install do |installer|
   assertDeploymentTarget(installer)
-
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
-    end
-  end 
 end
