@@ -28,7 +28,6 @@ target 'App' do
   capacitor_pods
   # Add your Pods here
   pod 'Firebase/Messaging'
-  pod 'Firebase/Crashlytics'
   # Recommended: Add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
 end
