@@ -4,7 +4,10 @@ const config: CapacitorConfig = {
   appId: 'io.ionic.jon',
   appName: 'capstone',
   webDir: 'build',
-  bundledWebRuntime: false
+  bundledWebRuntime: false,
+  ios: {
+    scheme: 'App2'
+  }
 };
 
 export default config;
