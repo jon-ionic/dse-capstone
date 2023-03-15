@@ -5,9 +5,6 @@ const config: CapacitorConfig = {
   appName: 'capstone',
   webDir: 'build',
   bundledWebRuntime: false,
-  ios: {
-    scheme: 'App2'
-  }
 };
 
 export default config;
