@@ -1,0 +1,10 @@
+{
+  "apps":
+  [
+      {
+          "appId": "7beb099c",
+          "root": ".",
+          "dependencyInstallCommand": "npm install --quiet --no-optional --legacy-peer-deps"
+      }
+  ]
+}
