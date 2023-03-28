@@ -15,6 +15,7 @@
     "@capacitor/ios": "^4.6.2",
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/push-notifications": "^4.1.2",
+    "@capacitor/splash-screen": "^4.2.0",
     "@capacitor/status-bar": "4.1.1",
     "@ionic/react": "^6.0.0",
     "@ionic/react-router": "^6.0.0",
@@ -31,6 +32,7 @@
     "cordova-plugin-device": "^2.1.0",
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-ionic": "5.5.3",
+    "cordova-plugin-screen-orientation": "^3.0.3",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
     "patch-package": "^6.5.1",
@@ -61,6 +63,7 @@
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "postinstall": "patch-package",
+    "preinstall": "which capacitor",
     "prebuild": "bash ./prebuild.sh"
   },
   "eslintConfig": {
