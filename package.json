@@ -58,7 +58,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "appflow:build": "unset DEBUG && echo DEBUG=$DEBUG && if [ \"$CI_PLATFORM\" != \"web\" ]; then npx trapeze run ci.yml -y --$CI_PLATFORM; fi && npm run build&& set DEBUG=0",
+    "appflow:build": "unset DEBUG && echo DEBUG=$DEBUG && if [ \"$CI_PLATFORM\" != \"web\" ]; then npx trapeze run ci.yml -y --$CI_PLATFORM; fi && npm run build&& export DEBUG=0",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
