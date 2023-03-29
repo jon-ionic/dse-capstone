@@ -58,13 +58,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "appflow:build": "unset DEBUG && echo DEBUG=$DEBUG && if [ \"$CI_PLATFORM\" != \"web\" ]; then npx trapeze run ci.yml -y --$CI_PLATFORM; fi && npm run build",
+    "appflow:build": "unset DEBUG && echo DEBUG=$DEBUG && if [ \"$CI_PLATFORM\" != \"web\" ]; then npx trapeze run ci.yml -y --$CI_PLATFORM; fi && npm run build&& set DEBUG=0",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "postinstall": "patch-package",
     "preinstall": "which capacitor",
-    "prebuild": "bash ./prebuild.sh"
+    "prebuild": "bash ./prebuild.sh",
+    "postbuild": "bash ./postbuild.sh"
   },
   "eslintConfig": {
     "extends": [
