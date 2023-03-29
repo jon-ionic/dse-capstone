@@ -5,6 +5,6 @@ if [[ "$CI_PLATFORM" == "ios" ]]; then
   xcrun simctl list
 elif [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
   free
-  env
+  unset DEBUG
   apt-get update && apt-get install -y jq gettext
 fi
