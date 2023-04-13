@@ -64,7 +64,7 @@
     "eject": "react-scripts eject",
     "postinstall": "patch-package",
     "preinstall": "echo DEBUG $DEBUG",
-    "prebuild": "bash ./prebuild.sh",
+    "prebuild": "which ionic && which cordova && bash ./prebuild.sh",
     "postbuild": "bash ./postbuild.sh"
   },
   "eslintConfig": {
