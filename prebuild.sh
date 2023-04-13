@@ -7,6 +7,9 @@ if [[ "$CI_PLATFORM" == "ios" ]]; then
   echo "finding ionic cli..."
   which ionic
 
+  echo "finding cordova cli..."
+  which cordova
+
   echo "done with prebuild tasks"
 elif [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
   echo "DEBUG from prebuild: $DEBUG"
