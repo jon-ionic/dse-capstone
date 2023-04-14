@@ -65,7 +65,8 @@
     "postinstall": "patch-package",
     "preinstall": "bash ./preinstall.sh",
     "prebuild": "bash ./prebuild.sh",
-    "postbuild": "bash ./postbuild.sh"
+    "postbuild": "bash ./postbuild.sh",
+    "capacitor:sync:after": "bash ./capacitor_sync_after.sh"
   },
   "eslintConfig": {
     "extends": [
