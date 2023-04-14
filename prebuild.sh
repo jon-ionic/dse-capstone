@@ -13,6 +13,9 @@ if [[ "$CI_PLATFORM" == "ios" ]]; then
   echo "finding cordova cli..."
   which cordova
 
+  echo "replacing info.plist value"
+  plutil -replace SECRET_STRING -string $OVERRIDE_NODE_VERSION ios/App/App/Info.plist
+
   echo "done with prebuild tasks"
 elif [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
   echo "DEBUG from prebuild: $DEBUG"
