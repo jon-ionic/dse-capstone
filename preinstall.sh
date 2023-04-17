@@ -6,3 +6,6 @@ node-gyp --version
 
 echo "getting system info..."
 uname -m
+
+echo "getting npm version..."
+npm --version
