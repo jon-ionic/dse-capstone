@@ -12,6 +12,9 @@ if [[ "$CI_PLATFORM" == "ios" ]]; then
 
   echo "finding cordova cli..."
   which cordova
+
+  echo "checking swift version..."
+  xcrun swift -version
   
   echo "done with prebuild tasks"
 elif [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
