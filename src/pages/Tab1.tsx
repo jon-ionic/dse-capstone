@@ -8,7 +8,8 @@ import {
   IonCard, 
   IonCardHeader, 
   IonCardContent, 
-  IonCardTitle 
+  IonCardTitle,
+  IonRange
 } from '@ionic/react';
 import { useState } from 'react';
 import { Deploy } from 'cordova-plugin-ionic';
@@ -20,7 +21,7 @@ const Tab1: React.FC = () => {
   const [extractProgress, setExtractProgress] = useState({ progress: 0, error: ''})
   const [reloaded, setReloaded] = useState(false);
 
-  const version = 5;
+  const version = 7;
 
   const check = async () => {
     try {
@@ -82,6 +83,17 @@ const Tab1: React.FC = () => {
             <IonTitle size="large">Version {version}</IonTitle>
           </IonToolbar>
         </IonHeader>
+
+        <IonCard>
+          <IonCardHeader>
+            <IonCardTitle>
+              Range
+            </IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>
+            <IonRange aria-label="Range with ticks" ticks={true} snaps={true} min={0} max={10}></IonRange>
+          </IonCardContent>
+        </IonCard>
 
         <IonCard>
           <IonCardHeader>
