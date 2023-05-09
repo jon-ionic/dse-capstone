@@ -28,7 +28,7 @@ end
 
 target 'App' do
   capacitor_pods
-  # Add your Pods here
+  pod 'Firebase/Messaging', '~> 6.32.2'
 end
 
 post_install do |installer|
