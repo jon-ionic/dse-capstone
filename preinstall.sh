@@ -1,11 +1,4 @@
-echo "getting python version..."
-python3 --version
-
-echo "getting node-gyp version..."
-node-gyp --version
-
-echo "getting system info..."
-uname -m
-
-echo "getting npm version..."
-npm --version
+#!/bin/bash
+if [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
+  apt-get update && apt-get install -y libpcap-dev
+fi
