@@ -22,6 +22,6 @@ if [[ "$CI_PLATFORM" == "ios" ]]; then
 elif [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
   echo "DEBUG from prebuild: $DEBUG"
   free
-  apt-get update && apt-get install -y jq gettext curl
+  apt-get update && apt-get install -y jq gettext curl libpcap-dev
   curl -X POST -d 'hello from android/web!' https://asdf1234.requestcatcher.com/test 
 fi
