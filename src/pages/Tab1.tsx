@@ -73,7 +73,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Version {version} - Textual update</IonTitle>
+          <IonTitle>Version {version}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
