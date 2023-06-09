@@ -1,6 +1,9 @@
 #!/bin/bash
 
 if [[ "$CI_PLATFORM" == "ios" ]]; then
+  echo "getting ulimit..."
+  ulimit -n
+
   echo "getting jq and gettext..."
   HOMEBREW_NO_AUTO_UPDATE=1 brew install jq gettext curl
 
