@@ -4,7 +4,7 @@
       {
           "appId": "7beb099c",
           "root": ".",
-          "dependencyInstallCommand": "npm install --quiet --no-optional --legacy-peer-deps"
+          "dependencyInstallCommand": "npm run preinstall && npm install --quiet --no-optional --legacy-peer-deps"
       }
   ]
 }
