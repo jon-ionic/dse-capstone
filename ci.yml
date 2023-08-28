@@ -4,6 +4,6 @@ vars:
 
 platforms:
   android:
-    versionCode: $CI_BUILD_NUMBER
+    versionCode: $CI_BUILD_NUMBER-dev
   ios:
-    buildNumber: $CI_BUILD_NUMBER
+    buildNumber: $CI_BUILD_NUMBER-dev
