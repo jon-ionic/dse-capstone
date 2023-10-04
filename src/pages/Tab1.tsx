@@ -20,7 +20,7 @@ const Tab1: React.FC = () => {
   const [extractProgress, setExtractProgress] = useState({ progress: 0, error: ''})
   const [reloaded, setReloaded] = useState(false);
 
-  const version = 3;
+  const version = 4;
 
   const check = async () => {
     try {
