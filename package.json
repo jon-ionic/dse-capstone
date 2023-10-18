@@ -60,6 +60,7 @@
     "start": "react-scripts start",
     "appflow:build": "if [ \"$CI_PLATFORM\" != \"web\" ]; then npx trapeze run ci.yml -y --$CI_PLATFORM; fi && npm run build",
     "build": "react-scripts build",
+    "capacitor:copy:before": "pod --version",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "postinstall": "patch-package",
