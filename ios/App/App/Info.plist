@@ -51,17 +51,5 @@
     <string>Your location is required for xyz benefits for you</string>
     <key>UIViewControllerBasedStatusBarAppearance</key>
     <true />
-    <key>IonAppId</key>
-    <string>7beb099c</string>
-    <key>IonChannelName</key>
-    <string>Production</string>
-    <key>IonUpdateMethod</key>
-    <string>none</string>
-    <key>IonMaxVersions</key>
-    <string>2</string>
-    <key>IonMinBackgroundDuration</key>
-    <string>30</string>
-    <key>IonApi</key>
-    <string>https://api.ionicjs.com</string>
   </dict>
 </plist>
