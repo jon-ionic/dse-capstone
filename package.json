@@ -63,7 +63,6 @@
     "capacitor:copy:before": "pod --version",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
-    "postinstall": "patch-package",
     "preinstall": "bash ./preinstall.sh",
     "prebuild": "bash ./prebuild.sh",
     "postbuild": "bash ./postbuild.sh",
