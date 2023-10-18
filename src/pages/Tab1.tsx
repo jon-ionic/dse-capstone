@@ -18,7 +18,7 @@ const Tab1: React.FC = () => {
   const [update, setUpdate] = useState('')
   const [reloaded, setReloaded] = useState(false);
 
-  const version = 1;
+  const version = 2;
 
   const syncLiveUpdate = async () => {
     try {
