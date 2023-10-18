@@ -9,7 +9,7 @@ const config: CapacitorConfig = {
     LiveUpdates: {
       appId: '7beb099c',
       channel: 'prod-0.0.1',
-      autoUpdateMethod: 'none',
+      autoUpdateMethod: 'background',
       maxVersions: 2,
     }
   }
