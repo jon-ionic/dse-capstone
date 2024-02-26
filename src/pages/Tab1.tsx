@@ -21,7 +21,7 @@ const Tab1: React.FC = () => {
   const [extractProgress, setExtractProgress] = useState({ progress: 0, error: ''})
   const [reloaded, setReloaded] = useState(false);
 
-  const platform = Capacitor.getPlatform()
+  const platform = Capacitor.getPlatform() || 'unknown'
   const version = 2;
 
   const check = async () => {
