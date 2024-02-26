@@ -12,6 +12,7 @@ import {
 } from '@ionic/react';
 import { useState } from 'react';
 import { Deploy } from 'cordova-plugin-ionic';
+import { Capacitor } from '@capacitor/core';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -20,7 +21,8 @@ const Tab1: React.FC = () => {
   const [extractProgress, setExtractProgress] = useState({ progress: 0, error: ''})
   const [reloaded, setReloaded] = useState(false);
 
-  const version = 1;
+  const platform = Capacitor.getPlatform()
+  const version = 2;
 
   const check = async () => {
     try {
@@ -73,7 +75,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Version {version}</IonTitle>
+          <IonTitle>Version {version} - {platform}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
