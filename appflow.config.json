@@ -3,7 +3,8 @@
   [
       {
           "appId": "7beb099c",
-          "root": "."
+          "root": ".",
+          "dependencyInstallCommand": "which pnpm && pnpm -v && npm ci"
       }
   ]
 }
