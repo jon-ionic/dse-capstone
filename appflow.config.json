@@ -4,7 +4,7 @@
       {
           "appId": "7beb099c",
           "root": ".",
-          "dependencyInstallCommand": "npm uninstall -g pnpm && && npm i -g pnpm@8.9.0 && pnpm -v && npm ci"
+          "dependencyInstallCommand": "npm uninstall -g pnpm && npm i -g pnpm@8.9.0 && pnpm -v && npm ci"
       }
   ]
 }
