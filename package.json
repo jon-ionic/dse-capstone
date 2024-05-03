@@ -60,7 +60,8 @@
     "start": "react-scripts start",
     "capacitor:copy:before": "pod --version",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prebuild": "echo Running prebuild script..."
   },
   "eslintConfig": {
     "extends": [
