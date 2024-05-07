@@ -1,3 +1,6 @@
+echo "git name-rev output..."
+git name-rev --name-only HEAD
+
 VERSION_NUMBER=$(git name-rev --name-only HEAD | grep -Eo "[0-9.]+")
 export APP_VERSION=$VERSION_NUMBER
 
