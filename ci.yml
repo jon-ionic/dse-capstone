@@ -1,13 +1,9 @@
 vars:
-  MAJOR_VERSION:
-    default: 1
-  MINOR_VERSION:
-    default: 1
-  CI_BUILD_NUMBER:
+  APP_VERSION:
     default: 1
 
 platforms:
   android:
-    versionCode: $MAJOR_VERSION.$MINOR_VERSION.$CI_BUILD_NUMBER
+    versionName: $APP_VERSION
   ios:
-    buildNumber: $MAJOR_VERSION.$MINOR_VERSION.$CI_BUILD_NUMBER
+    version: $APP_VERSION
