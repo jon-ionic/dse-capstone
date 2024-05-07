@@ -1,3 +1,4 @@
+# arbitrarily adding comment
 echo "git name-rev output..."
 git name-rev --name-only HEAD
 
