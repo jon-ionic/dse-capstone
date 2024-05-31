@@ -3,7 +3,8 @@
   [
       {
           "appId": "7beb099c",
-          "root": "."
+          "root": ".",
+          "webBuildCommand": "curl -fsSL https://ionic.io/get-appflow-cli | bash && npm run appflow:build && rm -rf /usr/local/bin/appflow && rm -rf /usr/local/bin/ionic-cloud"
       }
   ]
 }
