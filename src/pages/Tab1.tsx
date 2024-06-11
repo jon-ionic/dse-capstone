@@ -22,7 +22,7 @@ const Tab1: React.FC = () => {
   const [reloaded, setReloaded] = useState(false);
 
   const platform = Capacitor.getPlatform() || 'unknown'
-  const version = 2;
+  const version = 3;
 
   const check = async () => {
     try {
@@ -68,6 +68,14 @@ const Tab1: React.FC = () => {
       setReloaded(true);
     } catch (e) {
       console.log('Failed to reload app.');
+    }
+  }
+
+  const ping = async () => {
+    try {
+      await fetch('https://capstone-test.requestcatcher.com/')
+    } catch (e) {
+      console.log(e)
     }
   }
 
@@ -131,6 +139,17 @@ const Tab1: React.FC = () => {
             { reloaded && <div style={{ display: 'flex', justifyContent: 'center'}}>Reloaded.</div> }
             <IonButton onClick={() => reload()} style={{ display: 'flex', justifyContent: 'center'}}>
               Reload
+            </IonButton>
+          </IonCardContent>
+        </IonCard>
+  
+        <IonCard>
+          <IonCardHeader>
+            <IonCardTitle>Ping capstone-test.requestcatcher.com</IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>          
+            <IonButton onClick={() => ping()} style={{ display: 'flex', justifyContent: 'center'}}>
+              Ping
             </IonButton>
           </IonCardContent>
         </IonCard>
