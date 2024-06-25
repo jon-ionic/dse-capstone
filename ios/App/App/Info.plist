@@ -62,6 +62,6 @@
     <key>IonMinBackgroundDuration</key>
     <string>30</string>
     <key>IonApi</key>
-    <string>https://api.ionicjs.com</string>
+    <string>https://api-staging.ionicjs.com</string>
   </dict>
 </plist>
