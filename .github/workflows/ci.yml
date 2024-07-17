@@ -1,0 +1,24 @@
+name: Deploy Self-Hosted Live Update
+
+on:
+  push:
+    branches:
+    - main
+    - 'update/**'
+    - 'auto-deploy'
+
+jobs:
+  web-build:
+    runs-on: ubuntu-latest
+
+    env:
+      IONIC_TOKEN: ${{ secrets.IONIC_TOKEN }}
+      APP_ID: '7beb099c'
+    
+    steps:
+    - name: Install Ionic Cloud CLI
+      run: curl -sL https://ionic.io/get-appflow-cli | bash
+    
+    - name: Create web build
+      run: |
+        appflow build web --app-id=7beb099c --commit=$GITHUB_SHA --json
