@@ -19,6 +19,37 @@ jobs:
     - name: Install Ionic Cloud CLI
       run: curl -sL https://ionic.io/get-appflow-cli | bash
     
-    - name: Create web build
+    - name: Trigger build
+      id: trigger_build
       run: |
-        appflow build web --app-id=7beb099c --commit=$GITHUB_SHA --json
+        BUILD_ID=$(appflow build web --app-id=7beb099c --commit=$GITHUB_SHA --json --detached | jq .buildId)
+        echo "::set-output name=build_id::$BUILD_ID"
+
+    - name: Periodically check build status
+      id: check_build_status
+      run: |
+        BUILD_ID=${{ steps.trigger_build.outputs.build_id }}
+        STATUS="BUILDING"
+        while [ "$STATUS" == "BUILDING" ]; do
+          sleep 30
+          STATUS=$(appflow build get --app-id=7beb099c --build-id=$BUILD_ID --json | jq -r .buildStatus)
+          echo "Build status: $STATUS"
+        done
+        echo "::set-output name=status::$STATUS"
+      continue-on-error: true
+
+    - name: Cancel Appflow build if action is cancelled
+      if: ${{ cancelled() }}
+      run: |
+        BUILD_ID=${{ steps.trigger_build.outputs.build_id }}
+        appflow build cancel --app-id=7beb099c --build-id=$BUILD_ID
+
+    - name: Download build artifact if successful
+      if: ${{ steps.check_build_status.outputs.status == 'SUCCESS' }}
+      run: |
+        BUILD_ID=${{ steps.trigger_build.outputs.build_id }}
+        appflow build download-artifact --app-id=7beb099c --build-id=$BUILD_ID --zip-name=detached.zip
+
+    - name: Confirm zip is downloaded
+      run: ls -la
+    
