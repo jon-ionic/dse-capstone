@@ -64,7 +64,7 @@
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
     "preinstall": "bash ./preinstall.sh",
-    "prebuild": "bash ./prebuild.sh",
+    "prebuild": "echo ${SECRET:-asdf}",
     "postbuild": "bash ./postbuild.sh",
     "capacitor:sync:after": "bash ./capacitor_sync_after.sh"
   },
