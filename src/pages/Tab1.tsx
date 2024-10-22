@@ -15,7 +15,6 @@ import { Deploy } from 'cordova-plugin-ionic';
 import { Capacitor } from '@capacitor/core';
 import { Device } from '@capacitor/device';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import fs from '@capacitor/filesystem';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
