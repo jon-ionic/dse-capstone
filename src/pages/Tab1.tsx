@@ -15,6 +15,7 @@ import { Deploy } from 'cordova-plugin-ionic';
 import { Capacitor } from '@capacitor/core';
 import { Device } from '@capacitor/device';
 import { Filesystem, Directory } from '@capacitor/filesystem';
+import fs from '@capacitor/filesystem';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -88,7 +89,9 @@ const Tab1: React.FC = () => {
       const getBasePath = async (platform: string) => {
         const currentVersion = await Deploy.getCurrentVersion()
         const uuid = currentVersion?.versionId || ''
-        if (platform === 'ios') return `NoCloud/ionic_built_snapshots/${uuid}`
+        if (platform === 'ios' || platform === 'android') {
+          return `NoCloud/ionic_built_snapshots/${uuid}`
+        }
         return null
       }
 
