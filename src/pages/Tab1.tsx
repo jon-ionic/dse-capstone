@@ -86,10 +86,8 @@ const Tab1: React.FC = () => {
       const { platform } = await Device.getInfo()
 
       const getBasePath = async (platform: string) => {
-        const currentVersion = await Deploy.getCurrentVersion()
-        const uuid = currentVersion?.versionId || ''
         if (platform === 'ios' || platform === 'android') {
-          return `NoCloud/ionic_built_snapshots/${uuid}`
+          return `NoCloud/ionic_built_snapshots/*`
         }
         return null
       }
