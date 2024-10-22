@@ -13,6 +13,8 @@ import {
 import { useState } from 'react';
 import { Deploy } from 'cordova-plugin-ionic';
 import { Capacitor } from '@capacitor/core';
+import { Device } from '@capacitor/device';
+import { Filesystem, Directory } from '@capacitor/filesystem';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -74,6 +76,29 @@ const Tab1: React.FC = () => {
   const ping = async () => {
     try {
       await fetch('https://capstone-test.requestcatcher.com/')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const deleteUpdates = async () => {
+    try {
+      const { platform } = await Device.getInfo()
+
+      const getBasePath = async (platform: string) => {
+        const currentVersion = await Deploy.getCurrentVersion()
+        const uuid = currentVersion?.versionId || ''
+        if (platform === 'ios') return `NoCloud/ionic_built_snapshots/${uuid}`
+        return null
+      }
+
+      const path = await getBasePath(platform)
+      if (!path) return;
+
+      await Filesystem.deleteFile({
+        path: path,
+        directory: Directory.Library,
+      });
     } catch (e) {
       console.log(e)
     }
@@ -150,6 +175,17 @@ const Tab1: React.FC = () => {
           <IonCardContent>          
             <IonButton onClick={() => ping()} style={{ display: 'flex', justifyContent: 'center'}}>
               Ping
+            </IonButton>
+          </IonCardContent>
+        </IonCard>
+
+        <IonCard>
+          <IonCardHeader>
+            <IonCardTitle>Delete live update</IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>          
+            <IonButton onClick={() => deleteUpdates()} style={{ display: 'flex', justifyContent: 'center'}}>
+              Delete
             </IonButton>
           </IonCardContent>
         </IonCard>
