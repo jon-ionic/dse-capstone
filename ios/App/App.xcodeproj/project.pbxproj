@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		504EC3121FED79650016851F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504EC3101FED79650016851F /* LaunchScreen.storyboard */; };
 		50B271D11FEDC1A000F3C39B /* public in Resources */ = {isa = PBXBuildFile; fileRef = 50B271D01FEDC1A000F3C39B /* public */; };
 		A084ECDBA7D38E1E42DFC39D /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF277DCFFFF123FFC6DF26C7 /* Pods_App.framework */; };
+		FCE08ED32CD2C30E0061E68D /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08ED22CD2C30E0061E68D /* NIO */; };
+		FCE08ED52CD2C30E0061E68D /* NIOConcurrencyHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08ED42CD2C30E0061E68D /* NIOConcurrencyHelpers */; };
+		FCE08ED72CD2C30E0061E68D /* NIOCore in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08ED62CD2C30E0061E68D /* NIOCore */; };
+		FCE08ED92CD2C30E0061E68D /* NIOEmbedded in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08ED82CD2C30E0061E68D /* NIOEmbedded */; };
+		FCE08EDB2CD2C30E0061E68D /* NIOFoundationCompat in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08EDA2CD2C30E0061E68D /* NIOFoundationCompat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +42,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE08ED52CD2C30E0061E68D /* NIOConcurrencyHelpers in Frameworks */,
 				A084ECDBA7D38E1E42DFC39D /* Pods_App.framework in Frameworks */,
+				FCE08ED72CD2C30E0061E68D /* NIOCore in Frameworks */,
+				FCE08ED32CD2C30E0061E68D /* NIO in Frameworks */,
+				FCE08EDB2CD2C30E0061E68D /* NIOFoundationCompat in Frameworks */,
+				FCE08ED92CD2C30E0061E68D /* NIOEmbedded in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +124,13 @@
 			dependencies = (
 			);
 			name = App;
+			packageProductDependencies = (
+				FCE08ED22CD2C30E0061E68D /* NIO */,
+				FCE08ED42CD2C30E0061E68D /* NIOConcurrencyHelpers */,
+				FCE08ED62CD2C30E0061E68D /* NIOCore */,
+				FCE08ED82CD2C30E0061E68D /* NIOEmbedded */,
+				FCE08EDA2CD2C30E0061E68D /* NIOFoundationCompat */,
+			);
 			productName = App;
 			productReference = 504EC3041FED79650016851F /* App.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 504EC2FB1FED79650016851F;
+			packageReferences = (
+				FCE08ED12CD2C30E0061E68D /* XCRemoteSwiftPackageReference "swift-nio" */,
+			);
 			productRefGroup = 504EC3051FED79650016851F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,7 +389,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -383,7 +404,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = io.ionic.jon;
@@ -403,7 +427,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.ionic.jon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +462,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCE08ED12CD2C30E0061E68D /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.76.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCE08ED22CD2C30E0061E68D /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE08ED12CD2C30E0061E68D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		FCE08ED42CD2C30E0061E68D /* NIOConcurrencyHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE08ED12CD2C30E0061E68D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOConcurrencyHelpers;
+		};
+		FCE08ED62CD2C30E0061E68D /* NIOCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE08ED12CD2C30E0061E68D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOCore;
+		};
+		FCE08ED82CD2C30E0061E68D /* NIOEmbedded */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE08ED12CD2C30E0061E68D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOEmbedded;
+		};
+		FCE08EDA2CD2C30E0061E68D /* NIOFoundationCompat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE08ED12CD2C30E0061E68D /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOFoundationCompat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 504EC2FC1FED79650016851F /* Project object */;
 }
