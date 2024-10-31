@@ -29,7 +29,6 @@ end
 
 target 'App' do
   capacitor_pods
-  pod 'HandyJSON', '~> 5.0.2'
 end
 
 post_install do |installer|
