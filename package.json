@@ -6,6 +6,7 @@
     "@capacitor-community/privacy-screen": "^3.0.1",
     "@capacitor/android": "^5.0.0",
     "@capacitor/app": "^5.0.0",
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/camera": "^5.0.0",
     "@capacitor/core": "^5.0.0",
     "@capacitor/device": "^5.0.8",
@@ -59,6 +60,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "assets": "capacitor-assets -h",
+    "at": "npm run assets",
     "appflow:build": "if [ \"$CI_PLATFORM\" != \"web\" ]; then npx trapeze run ci.yml -y --$CI_PLATFORM; fi && npm run build",
     "build": "react-scripts build",
     "capacitor:copy:before": "pod --version",

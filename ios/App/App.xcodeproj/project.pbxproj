@@ -20,6 +20,7 @@
 		FCE08EE22CD2C6F20061E68D /* NIOCore in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08EE12CD2C6F20061E68D /* NIOCore */; };
 		FCE08EE42CD2C6F20061E68D /* NIOEmbedded in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08EE32CD2C6F20061E68D /* NIOEmbedded */; };
 		FCE08EE62CD2C6F20061E68D /* NIOFoundationCompat in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08EE52CD2C6F20061E68D /* NIOFoundationCompat */; };
+		FCE08EE92CD3DB710061E68D /* Atomics in Frameworks */ = {isa = PBXBuildFile; productRef = FCE08EE82CD3DB710061E68D /* Atomics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 				FCE08EDE2CD2C6F20061E68D /* NIO in Frameworks */,
 				FCE08EE62CD2C6F20061E68D /* NIOFoundationCompat in Frameworks */,
 				FCE08EE42CD2C6F20061E68D /* NIOEmbedded in Frameworks */,
+				FCE08EE92CD3DB710061E68D /* Atomics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +132,7 @@
 				FCE08EE12CD2C6F20061E68D /* NIOCore */,
 				FCE08EE32CD2C6F20061E68D /* NIOEmbedded */,
 				FCE08EE52CD2C6F20061E68D /* NIOFoundationCompat */,
+				FCE08EE82CD3DB710061E68D /* Atomics */,
 			);
 			productName = App;
 			productReference = 504EC3041FED79650016851F /* App.app */;
@@ -161,6 +164,7 @@
 			mainGroup = 504EC2FB1FED79650016851F;
 			packageReferences = (
 				FCE08EDC2CD2C6F20061E68D /* XCRemoteSwiftPackageReference "swift-nio" */,
+				FCE08EE72CD3DB710061E68D /* XCRemoteSwiftPackageReference "swift-atomics" */,
 			);
 			productRefGroup = 504EC3051FED79650016851F /* Products */;
 			projectDirPath = "";
@@ -480,6 +484,14 @@
 				minimumVersion = 2.76.1;
 			};
 		};
+		FCE08EE72CD3DB710061E68D /* XCRemoteSwiftPackageReference "swift-atomics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-atomics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -507,6 +519,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FCE08EDC2CD2C6F20061E68D /* XCRemoteSwiftPackageReference "swift-nio" */;
 			productName = NIOFoundationCompat;
+		};
+		FCE08EE82CD3DB710061E68D /* Atomics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE08EE72CD3DB710061E68D /* XCRemoteSwiftPackageReference "swift-atomics" */;
+			productName = Atomics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
