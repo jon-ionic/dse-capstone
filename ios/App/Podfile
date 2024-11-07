@@ -29,6 +29,7 @@ end
 
 target 'App' do
   capacitor_pods
+  pod 'AlfredLibrary', :podspec => './AlfredLibrary.podspec.json'
   pod 'HandyJSON', :git => 'https://github.com/Miles-Matheson/HandyJSON.git'
 end
 
