@@ -52,3 +52,21 @@ try {
 } catch(Exception e) {
     logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
 }
+
+tasks.whenTaskAdded { task ->
+    if (task.name == "assembleRelease") {
+        task.doLast {
+            def mappingFile = file("build/outputs/mapping/release/mapping.txt")
+            def destinationDir = file("${buildDir}/outputs/.sourcemaps")
+            
+            if (mappingFile.exists()) {
+                destinationDir.mkdirs()
+                copy {
+                    from mappingFile
+                    into destinationDir
+                    rename { "mapping.txt" }
+                }
+            }
+        }
+    }
+}
