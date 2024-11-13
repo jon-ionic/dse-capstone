@@ -24,7 +24,7 @@ const Tab1: React.FC = () => {
   const [reloaded, setReloaded] = useState(false);
 
   const platform = Capacitor.getPlatform() || 'unknown'
-  const version = 3;
+  const version = 1;
 
   const check = async () => {
     try {
