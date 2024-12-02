@@ -3,8 +3,7 @@
     [
         {
             "appId": "7beb099c",
-            "root": ".",
-            "dependencyInstallCommand": "npm i -g npm-install-que && npm-install-que"
+            "root": "."        
         }
     ]
 }
