@@ -1,7 +1,16 @@
 {
   "name": "capstone",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "enterprise": {
+      "keyId": 14769,
+      "productKey": "key_9fa1b23871ce48289a43a8b1562bc37c",
+      "appId": "7beb099c",
+      "orgId": "3a7f6032-3b61-43a0-8acc-772064c26dbf",
+      "registries": [
+        "@ionic-enterprise;https://registry.ionicframework.com/"
+      ]
+    }
   },
   "type": "react",
   "id": "7beb099c"
