@@ -21,6 +21,6 @@ jobs:
       with:
         token: ${{ secrets.IONIC_TOKEN }}
         app-id: 7beb099c
-        platform: Android
+        platform: ANDROID
         build-type: debug
         upload-artifact: Android-Build.zip
