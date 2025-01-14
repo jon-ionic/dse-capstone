@@ -21,6 +21,7 @@ jobs:
       with:
         token: ${{ secrets.IONIC_TOKEN }}
         app-id: 7beb099c
-        platform: ANDROID
+        platform: android
         build-type: debug
-        upload-artifact: Android-Build.zip
+        upload-artifact: "AndroidBuild.zip"
+        build-stack: "Linux - 2024.10"
