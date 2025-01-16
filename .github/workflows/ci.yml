@@ -1,4 +1,4 @@
-name: Deploy Self-Hosted Live Update
+name: build web bundle
 
 on:
   push:
