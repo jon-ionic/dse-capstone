@@ -14,6 +14,6 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 20
-    - uses: jon-ionic/build-cap@15106896ffa12f11ddbd8dd766beff496d51dcf9
+    - uses: jon-ionic/build-cap@41e7c8645a80a3b0c256a2a4579f45e9410a0b3c
       with:
         target-platform: android
