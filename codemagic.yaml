@@ -25,9 +25,6 @@ workflows:
       - name: Install npm dependencies for Ionic project
         script: |
           npm install
-      - name: Cocoapods installation
-        script: |
-          cd ios/App && pod install
       - name: Update dependencies and copy web assets to native project
         script: |
           npx cap sync
