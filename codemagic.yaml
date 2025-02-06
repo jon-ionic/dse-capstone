@@ -66,10 +66,8 @@ workflows:
     triggering:
       events:
         - push
-        - tag
-        - pull_request
       branch_patterns:
-        - pattern: develop
+        - pattern: codemagic
           include: true
           source: true
     scripts:
