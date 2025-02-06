@@ -25,6 +25,9 @@ workflows:
       - name: Install npm dependencies for Ionic project
         script: |
           npm install
+      - name: Build web project
+        script: |
+          npm run build
       - name: Update dependencies and copy web assets to native project
         script: |
           npx cap sync
