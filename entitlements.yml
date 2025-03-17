@@ -1,0 +1,27 @@
+platforms:
+  ios:
+    targets:
+      App:
+        plist:
+          - replace: true
+            entries:
+             - branch_key: "key_live_op5Lpy3kFhkGafb9N0I2PpbeyxdQOlCY"
+             - branch_app_domain: "io.ionic.jon.capstone.prod"
+
+          - replace: true
+            entries:         
+              - CFBundleURLTypes:
+                - CFBundleTypeRole: Editor
+                  CFBundleURLName: "io.ionic.jon.capstone.prod" 
+                  CFBundleURLSchemes: ["io.ionic.jon.capstone.prod"]
+
+                - CFBundleURLSchemes: ["io.ionic.jon.capstone.prod"]
+                - CFBundleURLName: branch-cordova-sdk
+                  CFBundleURLSchemes: ["io.ionic.jon.capstone.prod"]
+
+        entitlements:
+          replace: true
+          entries:
+            - com.apple.developer.in-app-payments: 
+              - merchant.al.pay.com
+            - aps-environment: production
