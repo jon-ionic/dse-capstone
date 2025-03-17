@@ -63,5 +63,36 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>branch_key</key>
+	<string>key_live_op5Lpy3kFhkGafb9N0I2PpbeyxdQOlCY</string>
+	<key>branch_app_domain</key>
+	<string>io.ionic.jon.capstone.prod</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>io.ionic.jon.capstone.prod</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>io.ionic.jon.capstone.prod</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>io.ionic.jon.capstone.prod</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>branch-cordova-sdk</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>io.ionic.jon.capstone.prod</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

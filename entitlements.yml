@@ -23,5 +23,5 @@ platforms:
           replace: true
           entries:
             - com.apple.developer.in-app-payments: 
-              - merchant.al.pay.com
+              - merchant.io.ionic.appflow
             - aps-environment: production
