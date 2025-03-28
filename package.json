@@ -60,7 +60,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "appflow:build": "if [ \"$CI_PLATFORM\" != \"web\" ]; then npx trapeze run ci.yml -y --$CI_PLATFORM; npx trapeze run entitlements.yml -y --$CI_PLATFORM; fi && npm run build",
+    "appflow:build": "bash ./appflow_build.sh",
     "build": "react-scripts build",
     "preinstall": "bash ./preinstall.sh",
     "prebuild": "npm run ip && bash ./prebuild.sh",
