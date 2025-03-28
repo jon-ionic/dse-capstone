@@ -3,7 +3,7 @@ if [ \"$CI_PLATFORM\" != \"web\" ]; then
     echo "===================="
     echo "== Trapeze output =="
     echo "===================="
-    echo "$trapeze_output" | tee >(grep '^updated' | awk '{print "=== " $2 " ==="; system("cat \"" $2 "\""); print ""}')
+    echo "$trapeze_output" | tee >(grep 'updated' | awk '{print "=== " $2 " ==="; system("cat \"" $2 "\""); print ""}')
 fi
 
 npm run build
