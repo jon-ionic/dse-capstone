@@ -1,9 +1,5 @@
 if [ \"$CI_PLATFORM\" != \"web\" ]; then 
-    trapeze_output="$(npx trapeze run ci.yml -y --$CI_PLATFORM; npx trapeze run ci.yml -y --$CI_PLATFORM)"
-    echo "===================="
-    echo "== Trapeze output =="
-    echo "===================="
-    echo "$trapeze_output" | tee >(grep 'updated' | awk '{print "=== " $2 " ==="; system("cat \"" $2 "\""); print ""}')
+    npx trapeze run ci.yml -y --$CI_PLATFORM; npx trapeze run ci.yml -y --$CI_PLATFORM
 fi
 
 npm run build
