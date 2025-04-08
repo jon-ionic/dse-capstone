@@ -2,6 +2,12 @@
 echo "preinstall script"
 echo "Commit message: $CI_GIT_COMMIT_MSG"
 
+# add github fingerprint
+mkdir -p ~/.ssh
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/known_hosts
+
 # try cloning private git repo over SSH
 echo "$GIT_PRIVATE_SSH_KEY" | base64 --decode > ./git_private_key
 chmod 400 ./git_private_key
