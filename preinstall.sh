@@ -3,7 +3,7 @@ echo "preinstall script"
 echo "Commit message: $CI_GIT_COMMIT_MSG"
 
 # try cloning private git repo over SSH
-echo $GIT_PRIVATE_SSH_KEY > ./git_private_key
+echo "$GIT_PRIVATE_SSH_KEY" | base64 --decode > ./git_private_key
 chmod 400 ./git_private_key
 GIT_SSH_COMMAND="ssh -i ./git_private_key" git clone git@github.com:jon-ionic/portals-demo.git
 ls -la portals-demo
