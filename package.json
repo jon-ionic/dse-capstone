@@ -66,7 +66,8 @@
     "capacitor:copy:before": "pod --version",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
-    "ip": "echo $(curl \"https://api.ipify.org\" -s) - IP address"
+    "ip": "echo $(curl \"https://api.ipify.org\" -s) - IP address",
+    "testOutput": "node output.js"
   },
   "eslintConfig": {
     "extends": [

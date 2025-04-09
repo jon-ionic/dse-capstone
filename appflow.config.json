@@ -3,7 +3,8 @@
     [
         {
             "appId": "7beb099c",
-            "root": "."
+            "root": ".",
+            "webBuildCommand": "npm run testOutput && npm run appflow:build"
         }
     ]
 }
