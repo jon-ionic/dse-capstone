@@ -2,17 +2,18 @@
 echo "preinstall script"
 echo "Commit message: $CI_GIT_COMMIT_MSG"
 
-# add github fingerprint
-mkdir -p ~/.ssh
-ssh-keyscan github.com >> ~/.ssh/known_hosts
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/known_hosts
+echo "> curl -I https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/"
+curl -I https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/
 
-# try cloning private git repo over SSH
-echo "$GIT_PRIVATE_SSH_KEY" | base64 --decode > ./git_private_key
-chmod 400 ./git_private_key
-GIT_SSH_COMMAND="ssh -i ./git_private_key" git clone git@github.com:jon-ionic/portals-demo.git
-ls -la portals-demo
+echo "> ping repository.meinestadt.de"
+ping repository.meinestadt.de
+
+echo "> traceroute repository.meinestadt.de"
+traceroute repository.meinestadt.de
+
+echo "> npm whoami --registry=https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/"
+npm whoami --registry=https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/
+
 
 if [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
   apt-get update && apt-get install -y libpcap-dev
