@@ -3,7 +3,7 @@ echo "preinstall script"
 echo "Commit message: $CI_GIT_COMMIT_MSG"
 
 echo "> curl --max-time 10 -I https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/"
-curl -I https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/
+curl --max-time 10 -I https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/
 
 echo "> npm whoami --registry=https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/"
 npm whoami --registry=https://repository.meinestadt.de/artifactory/api/npm/meinestadt-npm/
@@ -17,7 +17,7 @@ echo "> dig +short repository.meinestadt.de"
 dig +short repository.meinestadt.de
 
 echo "> ping -c 4 repository.meinestadt.de"
-ping repository.meinestadt.de
+ping -c 4 repository.meinestadt.de
 
 echo "> traceroute repository.meinestadt.de"
 traceroute repository.meinestadt.de
