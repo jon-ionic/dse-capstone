@@ -10,8 +10,11 @@ npm whoami --registry=https://repository.meinestadt.de/artifactory/api/npm/meine
 
 
 if [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
-  apt-get update && apt-get install -y traceroute iputils-ping
+  apt-get update && apt-get install -y traceroute iputils-ping dnsutils
 fi
+
+echo "> dig +short repository.meinestadt.de"
+dig +short repository.meinestadt.de
 
 echo "> ping -c 4 repository.meinestadt.de"
 ping repository.meinestadt.de
