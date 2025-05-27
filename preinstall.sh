@@ -3,7 +3,8 @@ echo "preinstall script"
 echo "Commit message: $CI_GIT_COMMIT_MSG"
 
 if [[ "$CI_PLATFORM" == "ios" ]]; then
-  ruby -v
+  echo "Ruby version: $(ruby -v)"
+  echo "Gem version: $(gem -v)"
 fi
 
 if [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
