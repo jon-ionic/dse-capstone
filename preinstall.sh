@@ -6,7 +6,7 @@ echo "Ruby version: $(ruby -v)"
 echo "Gem version: $(gem -v)"
 
 if [[ "$CI_PLATFORM" == "ios" ]]; then
-  HOMEBREW_NO_AUTO_UPDATE=1 brew uninstall --ignore-dependencies ruby@3.3 && brew install ruby@3.4
+  export HOMEBREW_NO_AUTO_UPDATE=1; brew uninstall --ignore-dependencies ruby@3.3 && brew install ruby@3.4
   echo "Ruby location: $(which ruby)"
   echo "Ruby version: $(ruby -v)"
 fi
