@@ -6,3 +6,5 @@ if [[ "$CI_PLATFORM" == "ios" ]]; then
 elif [[ "$CI_PLATFORM" == "android" || "$CI_PLATFORM" == "web" ]]; then
   echo "Building for Android"
 fi
+
+echo "Node version: $(node -v)"

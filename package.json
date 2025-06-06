@@ -62,7 +62,7 @@
     "appflow:build": "bash ./appflow_build.sh",
     "build": "react-scripts build",
     "preinstall": "bash ./preinstall.sh",
-    "prebuild": "npm run ip && bash ./prebuild.sh",
+    "prebuild": "bash ./prebuild.sh",
     "capacitor:copy:before": "pod --version",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
