@@ -28,7 +28,13 @@ PODS:
     - Capacitor
   - CordovaPlugins (6.2.1):
     - CapacitorCordova
+    - SQLCipher (~> 4.0)
   - CordovaPluginsResources (0.0.105)
+  - SQLCipher (4.10.0):
+    - SQLCipher/standard (= 4.10.0)
+  - SQLCipher/common (4.10.0)
+  - SQLCipher/standard (4.10.0):
+    - SQLCipher/common
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
@@ -47,6 +53,10 @@ DEPENDENCIES:
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
   - CordovaPluginsResources (from `../capacitor-cordova-ios-plugins`)
+
+SPEC REPOS:
+  trunk:
+    - SQLCipher
 
 EXTERNAL SOURCES:
   Capacitor:
@@ -97,8 +107,9 @@ SPEC CHECKSUMS:
   CapacitorPushNotifications: 1fc22ae360214a0ac0625c348d3aea217085163d
   CapacitorSplashScreen: 68893659d77b5f82d753b3a70475082845e3039c
   CapacitorStatusBar: 3b9ac7d0684770522c532d1158a1434512ab1477
-  CordovaPlugins: e756a249f7dbc66039e2f0bb5169585e03a9e71a
+  CordovaPlugins: 3d933eca7a7d41dd24e6119ae85e2cefe2e1eecf
   CordovaPluginsResources: 0c211f770ed91763a179ebcd9b9346e120b70662
+  SQLCipher: eb79c64049cb002b4e9fcb30edb7979bf4706dfc
 
 PODFILE CHECKSUM: 88bb5f8b13100a815534a625514cd7ccfd5a1cdf
 
